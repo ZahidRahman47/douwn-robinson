@@ -31,7 +31,7 @@ export function Issues() {
           </p>
         </Reveal>
 
-        <RevealGroup className="mt-14 divide-y divide-white/10 border-y border-white/10" stagger={0.08}>
+        <RevealGroup className="mt-14 divide-y divide-white/10 border-y border-white/10" stagger={0.05}>
           {issues.map((issue, i) => {
             const Icon = iconMap[issue.icon as keyof typeof iconMap] ?? Scale;
             const open = openIndex === i;

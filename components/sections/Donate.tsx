@@ -24,7 +24,7 @@ export function Donate() {
           <p className="mt-5 max-w-md text-cream/65">{donate.subhead}</p>
         </Reveal>
 
-        <Reveal delay={0.15}>
+        <Reveal delay={0.08}>
           <div className="rounded-3xl border border-white/10 bg-navy-800/80 p-7 shadow-soft backdrop-blur sm:p-9">
             <div className="grid grid-cols-2 gap-2 rounded-full bg-navy-900 p-1.5">
               {(["one-time", "monthly"] as const).map((f) => (

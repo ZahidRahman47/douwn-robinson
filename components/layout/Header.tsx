@@ -34,9 +34,9 @@ export function Header() {
 
       <header
         className={clsx(
-          "sticky top-0 z-50 transition-all duration-300",
+          "sticky top-0 z-50 transition-colors duration-300",
           scrolled
-            ? "bg-navy-900/90 backdrop-blur-md shadow-soft border-b border-white/5"
+            ? "bg-navy-900/95 shadow-soft border-b border-white/5"
             : "bg-transparent"
         )}
       >

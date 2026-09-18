@@ -26,7 +26,8 @@ export const utilityLinks = [
 
 export const hero = {
   eyebrow: "Dawson Robinson for Fulton County Tax Commissioner",
-  headlineLines: ["Fair taxes.", "Honest government.", "A Fulton County that works for every homeowner."],
+  headlineLines: ["Fair taxes.", "Honest government."],
+  headlineAccent: "A Fulton County that works for every homeowner.",
   subhead:
     "Dawson believes every homeowner deserves a tax office that is transparent, responsive, and fair — no matter their zip code.",
   primaryCta: { label: "Donate Today", href: "#donate" },
@@ -46,6 +47,8 @@ export const about = {
   video: {
     src: "/images/campaign-video.mp4",
     poster: "/images/candidate-photo.jpg",
+    eyebrow: "Campaign Film",
+    caption: "Why I'm running for Tax Commissioner",
   },
   portrait: "/images/candidate-photo.jpg",
   stats: [

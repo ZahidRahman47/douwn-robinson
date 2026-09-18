@@ -12,22 +12,35 @@ const lineVariants = {
   visible: { opacity: 1, y: "0%" },
 };
 
+// Fades the arch (photo + hairline) into the page instead of dead-ending it on a
+// hard horizontal cut. A mask is used rather than a scrim so the section's mesh
+// gradient shows through untouched.
+const archFade = {
+  maskImage: "linear-gradient(to bottom, #000 68%, transparent 98%)",
+  WebkitMaskImage: "linear-gradient(to bottom, #000 68%, transparent 98%)",
+};
+
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-navy-900 bg-mesh-navy bg-grain pt-16 pb-28 sm:pt-24">
-      {/* ambient blobs */}
-      <div className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-gold-500/20 blur-[120px] animate-blob" />
-      <div className="pointer-events-none absolute bottom-[-20%] left-[-10%] h-[420px] w-[420px] rounded-full bg-maroon-500/20 blur-[120px] animate-blob" />
+    <section
+      id="top"
+      className="relative flex flex-col overflow-hidden bg-navy-900 bg-mesh-navy bg-grain pb-24 pt-14 sm:pt-16 lg:min-h-[calc(100svh-7.25rem)] lg:justify-center lg:pb-28 lg:pt-8"
+    >
+      {/* Ambient washes. Deliberately static and GPU-promoted: an infinite transform
+          animation on a 120px-blurred surface forces a full re-blur every frame and
+          was the main source of scroll jank across the whole page. */}
+      <div className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] transform-gpu rounded-full bg-gold-500/20 blur-[100px]" />
+      <div className="pointer-events-none absolute bottom-[-20%] left-[-10%] h-[420px] w-[420px] transform-gpu rounded-full bg-maroon-500/20 blur-[100px]" />
 
-      <div className="container-page relative grid gap-16 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
-        <div>
+      <div className="container-page relative grid w-full gap-14 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-12">
+        <div className="max-w-2xl">
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <Eyebrow>{hero.eyebrow}</Eyebrow>
           </motion.div>
 
-          <h1 className="mt-6 font-display text-balance text-[2.5rem] font-semibold leading-[1.08] tracking-tight text-cream sm:text-6xl lg:text-[3.75rem]">
+          <h1 className="mt-7 font-display text-[2.75rem] font-semibold leading-[1.04] tracking-[-0.02em] text-cream sm:text-6xl lg:text-[4.25rem]">
             {hero.headlineLines.map((line, i) => (
-              <span key={i} className="block overflow-hidden">
+              <span key={i} className="block overflow-hidden pb-[0.06em]">
                 <motion.span
                   className="block"
                   initial="hidden"
@@ -35,21 +48,26 @@ export function Hero() {
                   variants={lineVariants}
                   transition={{ duration: 0.7, delay: 0.15 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  {i === hero.headlineLines.length - 1 ? (
-                    <span className="text-gold-300">{line}</span>
-                  ) : (
-                    line
-                  )}
+                  {line}
                 </motion.span>
               </span>
             ))}
+
+            <motion.span
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-5 block max-w-[19ch] text-[1.75rem] font-normal italic leading-[1.18] text-gold-300 sm:text-[2.125rem] lg:text-[2.375rem]"
+            >
+              {hero.headlineAccent}
+            </motion.span>
           </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.55 }}
-            className="mt-6 max-w-xl text-lg leading-relaxed text-cream/70"
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="mt-8 max-w-[46ch] text-[1.0625rem] leading-relaxed text-cream/65"
           >
             {hero.subhead}
           </motion.p>
@@ -57,8 +75,8 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="mt-9 flex flex-wrap items-center gap-4"
+            transition={{ duration: 0.6, delay: 0.72 }}
+            className="mt-10 flex flex-wrap items-center gap-4"
           >
             <Button href={hero.primaryCta.href} variant="primary">
               {hero.primaryCta.label}
@@ -70,25 +88,32 @@ export function Hero() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
+          initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mx-auto aspect-[4/5] w-full max-w-sm"
+          transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mx-auto aspect-[4/5] w-full max-w-[15rem] sm:max-w-[19rem] lg:mr-0 lg:max-w-[26rem]"
         >
-          <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-gold-400/30 via-gold-500/10 to-transparent blur-2xl shadow-goldGlow" />
-          <div className="relative h-full w-full overflow-hidden rounded-[2rem] border border-white/10 shadow-soft">
+          {/* soft gold halo behind the arch */}
+          <div className="pointer-events-none absolute -inset-12 transform-gpu rounded-t-full bg-gradient-to-b from-gold-400/12 via-gold-500/5 to-transparent blur-3xl" />
+
+          {/* hairline gold arch, concentric with the portrait and fading at the base */}
+          <div
+            style={archFade}
+            className="pointer-events-none absolute -inset-x-5 -top-5 bottom-0 rounded-t-full border border-gold-400/45"
+          />
+
+          {/* portrait clipped to the arch */}
+          <div style={archFade} className="relative h-full w-full overflow-hidden rounded-t-full">
             <Image
               src={hero.portrait}
               alt="Dawson Robinson"
               fill
-              sizes="(max-width: 640px) 90vw, 420px"
-              className="object-cover"
+              sizes="(max-width: 640px) 240px, (max-width: 1024px) 304px, 416px"
+              className="object-cover object-top"
               priority
             />
-          </div>
-          <div className="absolute -bottom-5 -left-5 rounded-2xl border border-white/10 bg-navy-800/90 px-5 py-4 shadow-soft backdrop-blur">
-            <p className="font-display text-2xl font-semibold text-gold-300">20+</p>
-            <p className="text-xs text-cream/60">Years serving Fulton County</p>
+            {/* hairline on the photo edge so the dome reads crisply against the navy */}
+            <div className="pointer-events-none absolute inset-0 rounded-t-full ring-1 ring-inset ring-white/10" />
           </div>
         </motion.div>
       </div>
@@ -97,14 +122,14 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
-        className="mt-16 flex justify-center"
+        className="pointer-events-none mt-14 flex justify-center lg:absolute lg:inset-x-0 lg:bottom-8 lg:mt-0"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-1 text-cream/40"
+          className="flex flex-col items-center gap-1 text-cream/35"
         >
-          <span className="text-[10px] uppercase tracking-[0.2em]">Scroll</span>
+          <span className="text-[10px] uppercase tracking-[0.25em]">Scroll</span>
           <ChevronDown size={18} />
         </motion.div>
       </motion.div>
