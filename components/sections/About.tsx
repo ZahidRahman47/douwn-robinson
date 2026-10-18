@@ -71,7 +71,7 @@ export function About() {
                   <>
                     <Image
                       src={about.video.poster}
-                      alt="Video: Meet Dawson Robinson"
+                      alt="Video: Meet Duvwon Robinson"
                       fill
                       sizes="(max-width: 1024px) 90vw, 620px"
                       className="object-cover"

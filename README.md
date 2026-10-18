@@ -1,4 +1,4 @@
-# Dawson Robinson — Campaign Website (Redesign)
+# Duvwon Robinson — Campaign Website (Redesign)
 
 A complete visual redesign of the campaign website, built with **Next.js 14 (App Router)**,
 **TypeScript**, **Tailwind CSS**, and **Framer Motion**. Same information architecture as the

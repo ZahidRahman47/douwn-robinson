@@ -18,7 +18,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Dawson Robinson for Fulton County Tax Commissioner",
+  title: "Duvwon Robinson for Fulton County Tax Commissioner",
   description:
     "Fair taxes. Honest government. A Fulton County that works for every homeowner.",
 };

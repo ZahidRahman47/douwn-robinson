@@ -3,12 +3,12 @@
 // ---------------------------------------------------------------------------
 
 export const site = {
-  candidateName: "Dawson Robinson",
+  candidateName: "Duvwon Robinson",
   officeEyebrow: "Fulton County Tax Commissioner",
   phone: "(404) 555-0142",
-  email: "info@dawsonforfulton.com",
+  email: "info@duvwonforfulton.com",
   disclaimer:
-    "Paid for by the Committee to Elect Dawson Robinson. Contributions are not tax deductible.",
+    "Paid for by the Committee to Elect Duvwon Robinson. Contributions are not tax deductible.",
 };
 
 export const nav = [
@@ -25,21 +25,21 @@ export const utilityLinks = [
 ];
 
 export const hero = {
-  eyebrow: "Dawson Robinson for Fulton County Tax Commissioner",
+  eyebrow: "Duvwon Robinson for Fulton County Tax Commissioner",
   headlineLines: ["Fair taxes.", "Honest government."],
   headlineAccent: "A Fulton County that works for every homeowner.",
   subhead:
-    "Dawson believes every homeowner deserves a tax office that is transparent, responsive, and fair — no matter their zip code.",
+    "Duvwon believes every homeowner deserves a tax office that is transparent, responsive, and fair — no matter their zip code.",
   primaryCta: { label: "Donate Today", href: "#donate" },
-  secondaryCta: { label: "Meet Dawson", href: "#about" },
-  portrait: "/images/candidate-photo.jpg",
+  secondaryCta: { label: "Meet Duvwon", href: "#about" },
+  portrait: "/images/profile.jpeg",
 };
 
 export const about = {
-  eyebrow: "About Dawson",
-  title: "Meet Dawson Robinson",
+  eyebrow: "About Duvwon",
+  title: "Meet Duvwon Robinson",
   paragraphs: [
-    "Dawson Robinson has spent two decades serving Fulton County — first as a community organizer, then as a small business owner, and now as a candidate committed to fixing a broken tax system.",
+    "Duvwon Robinson has spent two decades serving Fulton County — first as a community organizer, then as a small business owner, and now as a candidate committed to fixing a broken tax system.",
     "He's seen firsthand how confusing assessments, long wait times, and inconsistent service erode trust in local government. As Tax Commissioner, he'll bring transparency, modern technology, and genuine accountability to an office that touches every homeowner in the county.",
     "This campaign isn't about politics as usual. It's about a tax office that finally works for the people who fund it.",
   ],
@@ -58,6 +58,27 @@ export const about = {
   ],
 };
 
+export const gallery = {
+  eyebrow: "On the Trail",
+  title: "Messages from the campaign",
+  slides: [
+    {
+      src: "/images/IMG_6176.PNG",
+      width: 1193,
+      height: 1318,
+      alt: "Sign quoting Dr. Martin Luther King Jr.: We need leaders not in love with money but in love with justice.",
+      caption: "Leadership rooted in justice, not money.",
+    },
+    {
+      src: "/images/IMG_6194.PNG",
+      width: 1061,
+      height: 1483,
+      alt: "Term Tuesday graphic explaining home equity.",
+      caption: "Term Tuesday: understanding home equity.",
+    },
+  ],
+};
+
 export const issues = [
   {
     title: "Fair & Accurate Assessments",
@@ -68,7 +89,7 @@ export const issues = [
   {
     title: "Faster, Friendlier Service",
     description:
-      "No homeowner should wait hours for a simple question. Dawson will modernize intake, expand online services, and cut wait times across every office.",
+      "No homeowner should wait hours for a simple question. Duvwon will modernize intake, expand online services, and cut wait times across every office.",
     icon: "Clock",
   },
   {
@@ -80,13 +101,13 @@ export const issues = [
   {
     title: "Transparent & Accountable Spending",
     description:
-      "Every dollar collected should be tracked and reported clearly. Dawson will publish plain-language budget reports so residents can see exactly where money goes.",
+      "Every dollar collected should be tracked and reported clearly. Duvwon will publish plain-language budget reports so residents can see exactly where money goes.",
     icon: "FileCheck",
   },
   {
     title: "Real Community Engagement",
     description:
-      "Policy shouldn't happen behind closed doors. Dawson will hold regular town halls and build a standing resident advisory council on tax policy.",
+      "Policy shouldn't happen behind closed doors. Duvwon will hold regular town halls and build a standing resident advisory council on tax policy.",
     icon: "Users",
   },
 ];
@@ -106,14 +127,14 @@ export const news = [
     date: "Sept 12, 2025",
     title: "Robinson Announces Plan to Modernize the Tax Commissioner's Office",
     excerpt:
-      "Today Dawson Robinson unveiled a five-point plan to bring faster service and greater transparency to every Fulton County homeowner.",
+      "Today Duvwon Robinson unveiled a five-point plan to bring faster service and greater transparency to every Fulton County homeowner.",
   },
   {
     category: "Endorsement",
     date: "Sept 3, 2025",
     title: "Local Homeowners Association Backs Robinson for Tax Commissioner",
     excerpt:
-      "Community leaders across the county are lining up behind Dawson's vision for a fairer, faster tax office.",
+      "Community leaders across the county are lining up behind Duvwon's vision for a fairer, faster tax office.",
   },
   {
     category: "Field Update",
@@ -128,7 +149,7 @@ export const footerColumns = [
   {
     heading: "About",
     links: [
-      { label: "Meet Dawson", href: "#about" },
+      { label: "Meet Duvwon", href: "#about" },
       { label: "The Issues", href: "#issues" },
       { label: "News", href: "#news" },
     ],

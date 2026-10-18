@@ -22,12 +22,12 @@ export function Issues() {
     <section id="issues" className="relative bg-navy-900 py-24 sm:py-32">
       <div className="container-page">
         <Reveal className="max-w-2xl">
-          <Eyebrow>What Dawson Stands For</Eyebrow>
+          <Eyebrow>What Duvwon Stands For</Eyebrow>
           <h2 className="mt-4 font-display text-3xl font-semibold text-cream sm:text-4xl">
             What I&apos;ll fight for in office
           </h2>
           <p className="mt-4 text-cream/60">
-            Five commitments Dawson is running on — and will be held accountable to.
+            Five commitments Duvwon is running on — and will be held accountable to.
           </p>
         </Reveal>
 

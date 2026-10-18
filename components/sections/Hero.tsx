@@ -106,7 +106,7 @@ export function Hero() {
           <div style={archFade} className="relative h-full w-full overflow-hidden rounded-t-full">
             <Image
               src={hero.portrait}
-              alt="Dawson Robinson"
+              alt="Duvwon Robinson"
               fill
               sizes="(max-width: 640px) 240px, (max-width: 1024px) 304px, 416px"
               className="object-cover object-top"
